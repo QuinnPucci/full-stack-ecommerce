@@ -10,12 +10,12 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         // Get all users
-        users: async () => {
+        findUsers: async () => {
             return User.find()
                 .select('-__v -password')
         },
         // Get a user by username
-        user: async (parent, { username }) => {
+        findUser: async (parent, { username }) => {
             return User.findOne({ username })
                 .select('-__v -password')
         },
