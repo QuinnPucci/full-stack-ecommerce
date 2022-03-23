@@ -5,13 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-<<<<<<< HEAD
-    "seed": "node config/seeds.js",
-    "watch": "nodemon"
-=======
     "watch": "nodemon",
     "seed": "node config/seeds.js"
->>>>>>> c2a3d2c8e6515b4608bcfedcc9ca8a9b3fdf895a
   },
   "keywords": [],
   "author": "",
@@ -22,7 +17,7 @@
     "express": "^4.17.3",
     "graphql": "^16.3.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.2.7"
+    "mongoose": "^5.9.9"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
