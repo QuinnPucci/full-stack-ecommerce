@@ -7,6 +7,7 @@ const typeDefs = gql`
         _id: ID
         username: String
         email: String
+        password: String
     }
     type Auth {
         token: ID!
@@ -14,7 +15,7 @@ const typeDefs = gql`
     }
     type Product {
         _id: ID
-        name: String
+        product_name: String
         createdAt: String
         description: String
         downloadURL: String

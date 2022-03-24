@@ -5,7 +5,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 
 // Import authentication middleware
-const { authMiddleware } = require('./utils/auth');
+//const { authMiddleware } = require('./utils/auth');
 
 // Import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
@@ -19,7 +19,7 @@ const startServer = async() => {
   const server = new ApolloServer ({
     typeDefs,
     resolvers,
-    context: authMiddleware
+    //context: authMiddleware
   });
 
   // Start the Apollo server
@@ -43,11 +43,11 @@ app.use(express.json());
 //If it is, we instruct the Express.js server to serve any files in the React application's build directory in the client folder. 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
-}
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
+}
 
 db.once('open', () => {
   app.listen(PORT, () => {
