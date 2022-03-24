@@ -14,20 +14,27 @@ const typeDefs = gql`
         user: User
     }
     type Product {
-        _id: ID
         name: String
-        createdAt: String
         description: String
-        downloadURL: String
-        price: Int
+        image: String
+        price: Float
+        quantity: Int
+        category: Category
     }
     type Query {
         findUsers: [User]
         findUser(username: String!): User
+        categories: [Category]
+        products:(category: ID, name: String): [Product]
+        product(_id: ID!): Product
+        user: User
+        order(_id: ID!): Order
     }
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+        addOrder(products: [ID]!) Order
+        updateproduct(_id: ID!, quantity: Int!): Product 
     }
     `;
 

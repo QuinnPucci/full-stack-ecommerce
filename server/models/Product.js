@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-const productSchema = new Schema({
+const productSchema = new Schema({ // id maybe?
     name: {
         type: String,
         required: true,
