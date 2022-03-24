@@ -5,7 +5,7 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 
 // Import authentication middleware
-//const { authMiddleware } = require('./utils/auth');
+// const { authMiddleware } = require('./utils/auth');
 
 // Import our typeDefs and resolvers
 const { typeDefs, resolvers } = require('./schemas');
@@ -39,8 +39,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 // Serve up static assets
-//check to see if the Node environment is in production. 
-//If it is, we instruct the Express.js server to serve any files in the React application's build directory in the client folder. 
+// check to see if the Node environment is in production. 
+// If it is, we instruct the Express.js server to serve any files in the React application's build directory in the client folder. 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 

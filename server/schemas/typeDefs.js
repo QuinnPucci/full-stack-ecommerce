@@ -13,14 +13,6 @@ const typeDefs = gql`
         token: ID!
         user: User
     }
-    type Product {
-        _id: ID
-        product_name: String
-        createdAt: String
-        description: String
-        downloadURL: String
-        price: Int
-    }
     type Query {
         findUsers: [User]
         findUser(username: String!): User
