@@ -11,8 +11,7 @@ const resolvers = {
     Query: {
         // Get all users
         findUsers: async () => {
-            return User.find()
-                .select('-__v -password')
+            return User.find().sort({ createdAt: -1 });
         },
         // Get a user by username
         findUser: async (parent, { username }) => {
