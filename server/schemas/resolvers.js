@@ -40,6 +40,14 @@ const resolvers = {
             }
             const token = signToken(user);
             return { token, user };
+        },
+        deleteUser: async (parent, { _id }, context) => {
+            if (context.user) {
+                const user = await User.deleteOne({ "_id" : _id });
+                console.log("user removed");
+                return;
+            }
+            throw new AuthenticationError("You need to be logged in to do this!");
         }
     } 
 };
