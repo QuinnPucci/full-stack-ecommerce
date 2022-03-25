@@ -8,6 +8,12 @@ const typeDefs = gql`
         username: String
         email: String
         password: String
+        billingFirstName: String
+        billingLastName: String
+        shippingAddress: String
+        shippingCity: String
+        shippingProvince: String
+        shippingPostalCode: String
     }
     type AuthToken {
         token: ID!
@@ -15,12 +21,18 @@ const typeDefs = gql`
     }
     type Query {
         findUsers: [User]
-        findUser(username: String!): User
+        findUser(_id: ID!): User
     }
     type Mutation {
         login(email: String!, password: String!): AuthToken
         addUser(username: String!, email: String!, password: String!): AuthToken
-        deleteUser(_id: ID!): User
+        deleteUser: User
+        updateUser(email: String, billingFirstName: String, 
+            billingLastName: String,
+            shippingAddress: String,
+            shippingCity: String,
+            shippingProvince: String,
+            shippingPostalCode: String): User
     }
     `;
 

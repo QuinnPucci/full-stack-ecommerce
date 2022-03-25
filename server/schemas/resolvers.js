@@ -13,9 +13,9 @@ const resolvers = {
         findUsers: async () => {
             return User.find().sort({ createdAt: -1 });
         },
-        // Get a user by username
-        findUser: async (parent, { username }) => {
-            return User.findOne({ username })
+        // Get a user by ID
+        findUser: async (parent, arg) => {
+            return User.findById( arg._id )
                 .select('-__v -password')
         },
     },
@@ -41,11 +41,25 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        deleteUser: async (parent, { _id }, context) => {
+        // Used to close your own account after you've logged in
+        deleteUser: async (parent, args, context) => {
             if (context.user) {
-                const user = await User.deleteOne({ "_id" : _id });
-                console.log("user removed");
+                const user = await User.deleteOne({ "_id" : context.user._id });
                 return;
+            }
+            throw new AuthenticationError("You need to be logged in to do this!");
+        },
+        // Update any field except for _id and password
+        updateUser: async (parent, args, context) => {
+            if (context.user) {
+                console.log(args);
+                const user = await User.findByIdAndUpdate(
+                    // Find by logged in user's ID
+                    {"_id" : context.user._id}, 
+                    // Update the fields
+                    args
+                );
+                return user;
             }
             throw new AuthenticationError("You need to be logged in to do this!");
         }
