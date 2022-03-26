@@ -8,7 +8,7 @@ function Contact() {
       </div>
 
       <div>
-        <form action="mailto: ouremail@gmail.com" method="POST">
+        <form action="mailto: fakemail@gmail.com" method="POST">
           <label htmlFor="name">Name:</label>
           <input name="name" type="input" className="tooltip"></input>
           <br></br>
