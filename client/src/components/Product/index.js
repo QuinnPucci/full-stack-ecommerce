@@ -1,46 +1,28 @@
 import React from "react";
-import password from "../../assets/images/password.png";
-import appointment from "../../assets/images/appointment.png";
-import horiseon from "../../assets/images/horiseon.png";
-import marvel from "../../assets/images/marvel.jpg";
-import scheduler from "../../assets/images/scheduler.png";
-import notetaker from "../../assets/images/notetaker.png";
 
-function Portfolio() {
-  const photos = [
+function Product() {
+  const productPhotos = [
     {
-      name: "Grocery aisle",
-      src: password,
+      name: "Product A",
+      //src: 
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
     },
     {
-      name: "Grocery booth",
-      src: appointment,
+      name: "Product B",
+      //src: 
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
     },
     {
-      name: "Building exterior",
-      src: horiseon,
+      name: "Product C",
+      //src: 
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
     },
     {
-      name: "Restaurant table",
-      src: marvel,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
-    },
-    {
-      name: "Cafe interior",
-      src: scheduler,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
-    },
-    {
-      name: "Cat green eyes",
-      src: notetaker,
+      name: "Product D",
+      //src: 
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie",
     },
@@ -48,10 +30,25 @@ function Portfolio() {
   return (
     <section>
       <div>
-        <h1 className="title">Products</h1>
+        <h1 className="title">Product</h1>
+      </div>
+      <div className="port-image">
+        {photos.map((image, i) => (
+          <div className="port-image-inner">
+            <div className="port-image-div">
+              <h3>{image.name}</h3>
+            </div>
+            <div>
+              <img src={image.src} alt={image.name} key={image.name}></img>
+            </div>
+            <div>
+              <p>lorem ipsum</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
 }
 
-export default Portfolio;
+export default Product;
