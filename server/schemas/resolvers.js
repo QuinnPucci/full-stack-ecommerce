@@ -1,5 +1,5 @@
 // Import Mongoose models
-const { User, Product } = require('../models');
+const { User, Product, Order, Category } = require('../models');
 
 // For handling login autheticatin errors
 const { AuthenticationError } = require('apollo-server-express');
