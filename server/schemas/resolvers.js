@@ -13,9 +13,9 @@ const resolvers = {
         findUsers: async () => {
             return User.find().sort({ createdAt: -1 });
         },
-        // Get a user by username
-        findUser: async (parent, { username }) => {
-            return User.findOne({ username })
+        // Get a user by ID
+        findUser: async (parent, arg) => {
+            return User.findById( arg._id )
                 .select('-__v -password')
         },
         categories: async () => {

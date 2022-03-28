@@ -8,16 +8,19 @@ const typeDefs = gql`
         username: String
         email: String
         password: String
+        billingFirstName: String
+        billingLastName: String
+        shippingAddress: String
+        shippingCity: String
+        shippingProvince: String
+        shippingPostalCode: String
     }
 
     type Auth {
+    type AuthToken {
         token: ID!
         user: User
     }
-    type Query {
-        findUsers: [User]
-        findUser(username: String!): User
-
     type Category {
         _id: ID
         name: String
@@ -48,8 +51,15 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): Auth
+        login(email: String!, password: String!): AuthToken
+        addUser(username: String!, email: String!, password: String!): AuthToken
+        deleteUser: User
+        updateUser(email: String, billingFirstName: String, 
+            billingLastName: String,
+            shippingAddress: String,
+            shippingCity: String,
+            shippingProvince: String,
+            shippingPostalCode: String): User
     }
     `;
 

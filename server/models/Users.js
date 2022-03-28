@@ -20,6 +20,42 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
+    billingFirstName: {
+      type: String,
+      required: false,
+      unique: false,
+      trim: false
+    },
+    billingLastName: {
+      type: String,
+      required: false,
+      unique: false,
+      trim: false
+    },
+    shippingAddress: {
+      type: String,
+      required: false,
+      unique: false,
+      trim: false
+    },
+    shippingCity: {
+      type: String,
+      required: false,
+      unique: false,
+      trim: false
+    },
+    shippingProvince: {
+      type: String,
+      required: false,
+      unique: false,
+      trim: false
+    },
+    shippingPostalCode: {
+      type: String,
+      required: false,
+      unique: false,
+      trim: false
+    }
     /* orders: [
       {
         type: Array
