@@ -40,7 +40,7 @@ const typeDefs = gql`
         findUsers: [User]
         findUser(username: String!): User
         categories: [Category]
-        products:(category: ID, name: String): [Product]
+        products(category: ID, name: String): [Product]
         product(_id: ID!): Product
         order(_id: ID!): Order
     }
@@ -54,6 +54,8 @@ const typeDefs = gql`
             shippingCity: String,
             shippingProvince: String,
             shippingPostalCode: String): User
+        addOrder(products: [ID]!): Order
+        updateProduct(_id: ID!, quantity: Int!): Product
     }
     `;
 
