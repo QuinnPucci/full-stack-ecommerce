@@ -1,31 +1,15 @@
 import React from "react";
+import ProductList from "../components/ProductList";
 
 // setting some framework
 
-function Home() {
+const Home = () => {
+  const [currentCategory, setCategory] = useState("");
   return (
-    <section>
-      <div>
-        <h1 className="title">E-COMMERCE</h1>
-      </div>
-      <div>
-        <div>ourShop</div>
-        <div></div>
-      </div>
-      <div>
-        <h2></h2>
-      </div>
-      <div>
-        <h2></h2>
-        <div id="">
-          <h5></h5>
-          <h5></h5>
-          <h5></h5>
-          <h5></h5>
-        </div>
-      </div>
-    </section>
+    <div className="container">
+      <ProductList currentCategory={currentCategory} />
+    </div>
   );
-}
+};
 
 export default Home;
