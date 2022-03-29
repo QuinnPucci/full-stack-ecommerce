@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import ProductList from "../components/ProductList";
+import Cart from '../components/Cart';
 
 // setting some framework
 

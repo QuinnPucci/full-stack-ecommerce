@@ -14,6 +14,8 @@ import Footer from "./components/Footer";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Cart from "./components/Cart";
+import CartPage from "./pages/CartPage";
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -46,6 +48,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
+              <Route exact path="/cart" component={CartPage} />
             </Switch>
         </div>
         <Footer />
