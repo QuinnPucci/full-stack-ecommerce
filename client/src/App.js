@@ -15,8 +15,11 @@ const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
+<<<<<<< HEAD
 // ------- For JWT stuff -------
 
+=======
+>>>>>>> 366f55e0eaf3b248dbcbe4cf02d9bde9f808d656
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
   return {
@@ -26,7 +29,10 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 366f55e0eaf3b248dbcbe4cf02d9bde9f808d656
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
