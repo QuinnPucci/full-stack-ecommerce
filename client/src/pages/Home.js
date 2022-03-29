@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import ProductList from "../components/ProductList";
 
 // setting some framework
