@@ -39,6 +39,9 @@ const resolvers = {
         product: async (parent, { _id }) => {
             return await Product.findById(_id).populate('category');
         },
+        orders: async () => {
+            return Order.find().sort({ createdAt: -1 });
+        },
         order: async (parent, { _id }, context) => {
             if (context.user) {
               const user = await User.findById(context.user._id).populate({
@@ -73,6 +76,29 @@ const resolvers = {
             }
             const token = signToken(user);
             return { token, user };
+        },
+        // Used to close your own account after you've logged in
+        deleteUser: async (parent, args, context) => {
+            if (context.user) {
+                const user = await User.deleteOne({ "_id" : context.user._id });
+                return;
+            }
+            throw new AuthenticationError("You need to be logged in to do this!");
+        },
+        // Update any field except for _id and password
+        updateUser: async (parent, args, context) => {
+            if (context.user) {
+                console.log(args);
+                const user = await User.findByIdAndUpdate(
+                    // Find by logged in user's ID
+                    {"_id" : context.user._id}, 
+                    // Update the fields
+                    args
+                );
+                const userUpdated = await User.findById(context.user._id);
+                return userUpdated;
+            }
+            throw new AuthenticationError("You need to be logged in to do this!");
         },
         addOrder: async (parent, { products }, context) => {
             //console.log(context);

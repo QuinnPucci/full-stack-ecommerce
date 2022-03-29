@@ -12,17 +12,81 @@ export const LOGIN = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($firstName: String!, $lastName: String!, $email: String!) {
+  mutation addUser($billingFirstName: String!, $billingLastName: String!, $username: String!, $email: String!, $password: String! ) {
     addUser(
-      firstName: $firstName
-      lastName: $lastName
+      billingFirstName: $billingFirstName
+      billingLastName: $billingLastName
       email: $email
-      password: $pasword
+      password: $password
+      username: $username
     ) {
       token
       user {
         _id
+        billingFirstName
+        billingLastName
+        email
+        username
       }
     }
   }
+`;
+
+// Used by the user to delete his own account. The user's ID is automatically fetched by the resolver function
+export const DELETE_USER = gql`
+  mutation deleteUser {
+    deleteUser {
+      _id
+    }
+  }
+`;
+
+// Update a user. The user's ID is automatically detected by the resolver function.
+// Note: As of now, passwords updated by this function don't get encrypted by bcrypt
+export const UPDATE_USER = gql`
+  mutation updateUser(
+    $email: String, 
+    $billingFirstName: String,
+    $billingLastName: String,
+    $shippingAddress: String,
+    $shippingCity: String,
+    $shippingProvince: String,
+    $shippingPostalCode: String,
+    $password: String
+    ) {
+    updateUser (
+      email: $email,
+      billingFirstName: $billingFirstName,
+      billingLastName: $billingLastName,
+      shippingAddress: $shippingAddress,
+      shippingCity: $shippingCity,
+      shippingProvince: $shippingProvince,
+      shippingPostalCode: $shippingPostalCode,
+      password: $password
+      ) {
+      _id
+      username
+      email
+      billingFirstName
+      billingLastName
+      shippingAddress
+      shippingCity
+      shippingProvince
+      shippingPostalCode
+    }
+  }
+`;
+
+// Place/Add an order
+export const ADD_ORDER = gql`
+mutation AddOrder($products: [ProductInput]!) {
+  addOrder(products: $products) {
+    _id
+    purchaseDate
+    products {
+      _id
+      name
+    }
+  }
+}
 `;
