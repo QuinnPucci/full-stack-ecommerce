@@ -15,6 +15,7 @@ const resolvers = {
         },
         // Get a user by ID
         findUser: async (parent, arg) => {
+            console.log(arg);
             return User.findById( arg._id )
                 .select('-__v -password')
         },
@@ -42,6 +43,15 @@ const resolvers = {
         orders: async () => {
             return Order.find().sort({ createdAt: -1 });
         },
+        // Find order by order ID
+        findOrder: async (parent, { _id }, context) => {
+            if (context.user) {
+              const order = await Order.findById({_id});
+              return order;
+            }
+            throw new AuthenticationError('Not logged in');
+        },
+        // Find order by user
         order: async (parent, { _id }, context) => {
             if (context.user) {
               const user = await User.findById(context.user._id).populate({
@@ -102,7 +112,7 @@ const resolvers = {
         },
         addOrder: async (parent, { products }, context) => {
             //console.log(context);
-            //console.log("Products", products);
+            console.log("Products", products);
             if (context.user) {
                 const order = await Order.create({ products });
                 //console.log("Order", order);
@@ -122,6 +132,10 @@ const resolvers = {
             const decrement = Math.abs(quantity) * -1;
       
             return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+        },
+        removeProduct: async (parent, {_id}) => {
+            const product = await Product.deleteOne({ _id });
+            return product;
         },
     }
 };

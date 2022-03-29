@@ -90,3 +90,12 @@ mutation AddOrder($products: [ProductInput]!) {
   }
 }
 `;
+
+// Remove a product
+export const REMOVE_PRODUCT = gql`
+mutation RemoveProduct($id: ID!) {
+  removeProduct(_id: $id) {
+    _id
+  }
+}
+`;

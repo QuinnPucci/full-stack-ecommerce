@@ -8,7 +8,8 @@ db.once('open', async () => {
     { name: 'Motor' },
     { name: 'Sailing' },
     { name: 'Fishing' },
-    { name: 'Expedition' }
+    { name: 'Expedition' },
+    { name: 'Special' }
   ]);
 
   console.log('categories seeded');
@@ -93,6 +94,22 @@ db.once('open', async () => {
       category: categories[3]._id,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
       image: 'exped2.jpeg',
+      price: 200000000,
+      quantity: 1
+    },
+    {
+      name: 'Expedition Yacht 2',
+      category: categories[3]._id,
+      description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
+      image: 'exped2.jpeg',
+      price: 200000000,
+      quantity: 1
+    },
+    {
+      name: 'Imperial Star Destroyer',
+      category: categories[4]._id,
+      description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum!!!',
+      image: 'https://static.wikia.nocookie.net/swfanon/images/a/a2/ISD_Night_Beast.jpg/revision/latest?cb=20150630020311',
       price: 200000000,
       quantity: 1
     }

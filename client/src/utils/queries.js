@@ -67,3 +67,41 @@ query {
     }
   }
 `;
+
+// Query an order by its ID
+export const ORDER = gql`
+query findOrder($id: ID!) {
+  findOrder(_id: $id) {
+    _id
+    purchaseDate
+    products {
+      name
+      description
+      image
+      price
+      quantity
+      category {
+        _id
+        name
+      }
+    }
+  }
+}
+`;
+
+// Query a user by his ID
+export const USER = gql`
+query findUser ($_id: ID!) {
+  findUser( _id: $_id) {
+    _id
+    username
+    email
+    billingFirstName
+    billingLastName
+    shippingAddress
+    shippingCity
+    shippingProvince
+    shippingPostalCode
+  }
+}
+`;
