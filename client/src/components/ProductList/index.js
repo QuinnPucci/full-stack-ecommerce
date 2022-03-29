@@ -1,11 +1,12 @@
-import React from "react";
+import { React } from "react";
 import { useQuery } from "@apollo/client";
+import { PRODUCTS } from "../../utils/queries";
 
 import ProductItem from "../ProductItem";
 // WE NEED QUERY_PRODUCTS IN QUERIES.
 
 function ProductList({ currentCategory }) {
-  const { loading, data } = useQuery(QUERY_PRODUCTS);
+  const { loading, data } = useQuery(PRODUCTS);
 
   const products = data?.products || [];
 
@@ -41,3 +42,6 @@ function ProductList({ currentCategory }) {
     </div>
   );
 }
+
+
+export default ProductList

@@ -23,5 +23,8 @@
   "homepage": "https://github.com/QuinnPucci/full-stack-ecommerce#readme",
   "devDependencies": {
     "concurrently": "^7.0.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^5.1.2"
   }
 }
