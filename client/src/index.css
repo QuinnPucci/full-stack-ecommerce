@@ -67,7 +67,3 @@ button {
   margin: 0 1px;
   background-color: #ffaa4c;
 }
-
-button:hover {
-  opacity: 0.7;
-}
