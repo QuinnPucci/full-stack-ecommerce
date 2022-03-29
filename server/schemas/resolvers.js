@@ -86,6 +86,10 @@ const resolvers = {
       
             throw new AuthenticationError('Not logged in');
         },
+        addProduct: async (parent, args) => {
+            const product = await Product.create(args);
+            return product;
+        },
         updateProduct: async (parent, { _id, quantity }) => {
             const decrement = Math.abs(quantity) * -1;
       

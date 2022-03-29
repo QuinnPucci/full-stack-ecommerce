@@ -54,6 +54,12 @@ const typeDefs = gql`
             shippingCity: String,
             shippingProvince: String,
             shippingPostalCode: String): User
+        addProduct(name: String!
+            description: String
+            image: String
+            price: Float
+            quantity: Int
+            category: String): Product
         addOrder(products: [ID]!): Order
         updateProduct(_id: ID!, quantity: Int!): Product
     }
