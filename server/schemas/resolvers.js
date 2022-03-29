@@ -75,13 +75,15 @@ const resolvers = {
             return { token, user };
         },
         addOrder: async (parent, { products }, context) => {
-            console.log(context);
+            //console.log(context);
+            //console.log("Products", products);
             if (context.user) {
-              const order = new Order({ products });
+                const order = await Order.create({ products });
+                //console.log("Order", order);
+                await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } })
+                const gotOrder = Order.findOne({_id: order._id}).populate('products');
       
-              await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
-      
-              return order;
+                return gotOrder;
             }
       
             throw new AuthenticationError('Not logged in');

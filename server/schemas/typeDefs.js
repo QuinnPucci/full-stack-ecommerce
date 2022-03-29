@@ -29,6 +29,7 @@ const typeDefs = gql`
         products: [Product]
     }
     type Product {
+        _id: ID
         name: String
         description: String
         image: String
@@ -36,12 +37,25 @@ const typeDefs = gql`
         quantity: Int
         category: Category
     }
+    input ProductInput {
+        _id: ID
+        name: String
+        description: String
+        image: String
+        price: Float
+        quantity: Int
+        category: CategoryInput
+    }
+    input CategoryInput {
+        _id: ID
+        name: String
+    }
     type Query {
         findUsers: [User]
         findUser(username: String!): User
         categories: [Category]
-        products(category: ID, name: String): [Product]
-        product(_id: ID!): Product
+        products(_id: ID, category: ID, name: String): [Product]
+        product(_id: ID!, name: String!): Product
         order(_id: ID!): Order
     }
     type Mutation {
@@ -60,7 +74,7 @@ const typeDefs = gql`
             price: Float
             quantity: Int
             category: String): Product
-        addOrder(products: [ID]!): Order
+        addOrder(products: [ProductInput]!): Order
         updateProduct(_id: ID!, quantity: Int!): Product
     }
     `;
