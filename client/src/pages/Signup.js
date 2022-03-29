@@ -3,7 +3,7 @@ import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 
-const Signup = () => {
+function Signup(props) {
   const [formState, setFormState] = useState({
     email: "",
     password: "",
@@ -83,6 +83,6 @@ const Signup = () => {
       </form>
     </div>
   );
-};
+}
 
 export default Signup;
