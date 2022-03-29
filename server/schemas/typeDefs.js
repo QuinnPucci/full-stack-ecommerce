@@ -14,6 +14,7 @@ const typeDefs = gql`
         shippingCity: String
         shippingProvince: String
         shippingPostalCode: String
+        orders: [Order]
     }
     type Auth {
         token: ID!
@@ -24,8 +25,8 @@ const typeDefs = gql`
         name: String
     }
     type Order {
-        _id: ID!
-        userID: ID!
+        _id: ID
+        userID: ID
         purchaseDate: String
         products: [Product]
     }

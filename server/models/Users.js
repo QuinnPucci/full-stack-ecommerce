@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const Order = require('./Order');
 const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
@@ -55,12 +56,8 @@ const userSchema = new Schema(
       required: false,
       unique: false,
       trim: false
-    }
-    /* orders: [
-      {
-        type: Array
-      }
-    ] */
+    },
+    orders: []
   },
   {
     toJSON: {

@@ -114,9 +114,17 @@ const resolvers = {
             //console.log(context);
             console.log("Products", products);
             if (context.user) {
-                const order = await Order.create({ products });
-                //console.log("Order", order);
-                await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } })
+                const order = await Order.create();
+                console.log("Order", order);
+                console.log("Order ID", order._id);
+                await Order.findByIdAndUpdate(
+                    order._id, 
+                    { $push: { "products": {products} } }
+                )
+                await User.findByIdAndUpdate(
+                    context.user._id, 
+                    { $push: { "orders": {_id: order._id} } }
+                )
                 const gotOrder = Order.findOne({_id: order._id}).populate('products');
       
                 return gotOrder;

@@ -102,6 +102,7 @@ query findUser ($_id: ID!) {
     shippingCity
     shippingProvince
     shippingPostalCode
+    orders
   }
 }
 `;
