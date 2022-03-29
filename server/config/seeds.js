@@ -21,7 +21,7 @@ db.once('open', async () => {
       name: 'Luxury Motor Yacht',
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'motor1.jpeg',
+      image: 'http://cdn.cnn.com/cnnnext/dam/assets/210701131326-worlds-largest-yacht--credit--winch-design-3.jpg',
       category: categories[0]._id,
       price: 150000000,
       quantity: 1
@@ -30,7 +30,7 @@ db.once('open', async () => {
       name: 'Luxury Motor Yacht 2',
       description:
         'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'motor2.jpeg',
+      image: 'https://www.ginx.tv/uploads/NewFolder_1/Valheim_Guide_for_Beginners/Valheim_raft/Valheim_raft_guide_controls.jpg',
       category: categories[0]._id,
       price: 70000000,
       quantity: 1
@@ -40,7 +40,7 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: 'motor3.jpeg',
+      image: 'https://yachtharbour.com/static/uploads/scale_1387_3d73c.jpg',
       price: 50000000,
       quantity: 1
     },
@@ -49,7 +49,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: 'sail1.jpeg',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbc2Hj6CjFnSTKAShmkB8thYDPM2IcLbOSoDoJYz0L8MYR2Fm0JXoGSh3tPeAAS2v6yE4&usqp=CAU',
       price: 1400000,
       quantity: 1
     },
