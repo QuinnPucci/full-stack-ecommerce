@@ -7,9 +7,11 @@ function App() {
     <div className="App">
       <div className="flex-column justify-flex-start">
         <Header />
+        <div className="container">
+          <p className="main-info">Hi.</p>
+        </div>
+        <Footer />
       </div>
-      <p className="main-info">Hi.</p>
-      <Footer />
     </div>
   );
 }
