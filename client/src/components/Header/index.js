@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="nav-bar">
-      <h1>Full-Stack E-Commerce</h1>
-
-      <nav className="text-center">
-        Login
-        <p>Logout</p>
-        <p>Signup</p>
-      </nav>
-    </header>
+    <ul className="flex-row">
+      <li className="mx-1">
+        <Link to="/signup">
+          Signup
+        </Link>
+      </li>
+      <li className="mx-1">
+        <Link to="/login">
+          Login
+        </Link>
+      </li>
+    </ul>
   );
 };
 
