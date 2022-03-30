@@ -1,7 +1,11 @@
 const db = require('./connection');
 const { Product, Category } = require('../models');
 
+// Drop the 'products' collection
+db.dropCollection('products', function(err, result) {});
+
 db.once('open', async () => {
+
   await Category.deleteMany();
 
   const categories = await Category.insertMany([
