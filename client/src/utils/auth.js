@@ -23,8 +23,13 @@ class AuthService {
 
   getToken() {
     return localStorage.getItem("id_token");
+  }
 
-    window.location.assign("/");
+  // Set token to localStorage and reload page to homepage
+  login(idToken) {
+    // Saves user token to localStorage
+    localStorage.setItem('id_token', idToken);
+    window.location.assign('/');
   }
 
   logout() {
