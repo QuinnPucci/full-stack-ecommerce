@@ -16,8 +16,6 @@ const Home = () => {
     <div className="container">
       <CategoryBar setCategory={setCategory} />
       <ProductList currentCategory={currentCategory} />
-      <h2>A sample single product card</h2>
-      <ProductItem _id={"62437bc6757a22258bb53ae4"} />
     </div>
   );
 };
