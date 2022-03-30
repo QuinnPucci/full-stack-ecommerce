@@ -30,7 +30,6 @@ h6 {
 
 .footer {
   width: 100%;
-  position: absolute;
   bottom: 0;
   background-color: #eeeeee;
   height: 60px;
@@ -109,6 +108,11 @@ input:focus {
 }
 
 .my-2 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.px-1 {
   margin-top: 8px;
   margin-bottom: 8px;
 }
