@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from '@apollo/client';
-import { PRODUCTS } from '../../utils/queries';
+import { useQuery } from "@apollo/client";
+import { PRODUCTS } from "../../utils/queries";
 
 // Displays a single product item
 // Can take one of the following as a parameter:
@@ -13,14 +13,12 @@ function ProductItem(item) {
 
   // Run a query for the product card
   const { loading, data } = useQuery(PRODUCTS, {
-    variables: { id: _id, name: name }
+    variables: { id: _id, name: name },
   });
 
   // Keep this so the app wont crash if data hasnt been received yet
-  if(!data) {
-    return (
-      <div>Loading...</div>
-    );
+  if (!data) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -30,10 +28,12 @@ function ProductItem(item) {
         <h4>{data.products[0].name}</h4>
       </Link>
       <div className="info">
-        <span className="stock"><span>Quantity:</span> {data.products[0].quantity} in stock.</span>
+        <span className="stock">
+          <span>Quantity:</span> {data.products[0].quantity} in stock.
+        </span>
         <span className="price">${data.products[0].price}</span>
       </div>
-      <button class='add-to-cart-btn'>Add to cart!</button>
+      <button class="add-to-cart-btn cart-button">Add to cart!</button>
     </div>
   );
 }
