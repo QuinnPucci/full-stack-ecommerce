@@ -58,7 +58,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: 'sail2.jpeg',
+      image: 'https://cdn.trendhunterstatic.com/thumbs/410/y7-sailing-yacht.jpeg',
       price: 1200000,
       quantity: 1
     },
@@ -67,7 +67,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: 'fishing1.jpeg',
+      image: 'https://mlclell2icph.i.optimole.com/7H1dfI4.oUR-~477a/w:1200/h:800/q:80/https://www.yachtingmagazine.com/wp-content/uploads/sites/21/2021/09/7-29-11-final-high-res-2.jpg',
       price: 850000,
       quantity: 1
     },
@@ -109,7 +109,7 @@ db.once('open', async () => {
       name: 'Imperial Star Destroyer',
       category: categories[4]._id,
       description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum!!!',
-      image: 'https://static.wikia.nocookie.net/swfanon/images/a/a2/ISD_Night_Beast.jpg/revision/latest?cb=20150630020311',
+      image: 'https://i.dailymail.co.uk/1s/2019/04/04/12/11853916-6885809-Four_Imperial_Star_Destroyers_hover_over_New_York_city_in_this_f-a-69_1554378988417.jpg',
       price: 200000000,
       quantity: 1
     }
