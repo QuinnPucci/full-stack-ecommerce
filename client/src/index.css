@@ -68,6 +68,51 @@ button {
   background-color: #ffaa4c;
 }
 
-button:hover {
-  opacity: 0.7;
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+form {
+  width: 40%;
+}
+
+input {
+  font-size: 15px;
+  padding: 5px;
+  border: 1px solid #21325e;
+  outline: none;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+}
+
+input:focus {
+  border: 1px solid #f0a500;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.my-2 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.error-text {
+  color: #890f0d;
 }
