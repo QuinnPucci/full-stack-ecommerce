@@ -32,7 +32,6 @@ function ProductItem(item) {
       <div className="info">
         <span className="stock">{data.products[0].quantity} in stock.</span>
         <span className="price">${data.products[0].price}</span>
-        <p>{data.products[0].description}</p>
       </div>
       <button>Add to cart!</button>
     </div>
