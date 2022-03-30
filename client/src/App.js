@@ -10,11 +10,12 @@ import { setContext } from "@apollo/client/link/context";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Cart from "./components/Cart";
 import CartPage from "./pages/CartPage";
-import Product from "./pages/Product";
+import Product from './pages/Product';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -38,7 +39,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
+      <Router> 
         <div className="App">
           <div className="flex-column justify-flex-start">
             <Header />
@@ -51,7 +52,6 @@ function App() {
                 <Route exact path="/products/:id" component={Product} />
               </Switch>
             </div>
-            <Footer />
           </div>
         </div>
       </Router>
