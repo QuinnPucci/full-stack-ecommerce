@@ -1,13 +1,216 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.main-info {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  margin: 5px 0;
+  line-height: 1.25;
+}
+
+header {
+  background: #b9cff8;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+
+ul {
+  text-decoration: none;
+}
+
+.footer {
+  width: 100%;
+  bottom: 0;
+  background-color: #eeeeee;
+  height: 60px;
+  text-align: center;
+}
+
+.footer-text {
+  padding: 15px;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+button {
+  font-size: 16px;
+  text-decoration: none;
+  padding: 4px 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 0 1px;
+  background-color: #ffaa4c;
+}
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+form {
+  width: 40%;
+}
+
+input {
+  font-size: 15px;
+  padding: 5px;
+  border: 1px solid #21325e;
+  outline: none;
+  border-radius: 3px;
+  transition: box-shadow 0.2s;
+}
+
+input:focus {
+  border: 1px solid #f0a500;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.my-2 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.px-1 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.error-text {
+  color: #890f0d;
+}
+
+.mx-1 {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Card item */
+.card {
+  width: 25%;
+  text-align: center;
+  padding: 8px 0;
+  flex-basis: 32.5%;
+}
+.card img {
+  display: block;
+}
+.card h4 {
+  font-weight: bold;
+  padding: 10px;
+  background-color: #21325e;
+  color: #fff;
+  margin-top: 0;
+}
+.card a {
+  text-decoration: none;
+}
+.card a:hover img {
+  opacity: 0.7;
+}
+.card .info {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.card .info .stock,
+.card .info .price {
+  display: block;
+  padding-bottom: 5px;
+}
+.card .info .price {
+  font-weight: bold;
+}
+
+/* Signgle product pages */
+.panel {
+  position: relative;
+}
+.single_product .panel h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(33, 50, 94, 0.8);
+  width: 100%;
+  color: #ffffff;
+  padding: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin-top: 0;
+}
+.single_product .panel img {
+  width: 100%;
+}
+.single_product .info {
+  padding: 10px;
+  border-bottom: solid 1px #999999;
+  margin-bottom: 20px;
+}
+.single_product .info > div > div {
+  padding-bottom: 10px;
+}
+.single_product .info > div span {
+  font-weight: bold;
+  padding-right: 5px;
+  width: 10%;
+  display: inline-block;
+}
+.single_product .specs {
+  padding-bottom: 20px;
+}
+.single_product h2 {
+  border-bottom: solid 1px #999999;
+  display: block;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
