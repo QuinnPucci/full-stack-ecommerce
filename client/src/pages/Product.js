@@ -27,20 +27,25 @@ const ProductPage = () => {
 
     return (
         <>
-        <h1>{productData.name}</h1>
-        <div className="">
-            <img alt={productData.name} src={`${productData.image}`} />
+        <div className="single_product">
+            <div className="panel">
+                <h1>{productData.name}</h1>
+                <img alt={productData.name} src={`${productData.image}`} />
+            </div>
                 <div className="info">
-                    <div className="stock">
-                        <h4>Quantity</h4>
-                        <span>{productData.quantity} in stock.</span>
-                    </div>
-                    <div className="price">
-                        <h4>Price</h4>
-                        <span className="price">${productData.price}</span>
+                    <div class="specs">
+                        <h2>Prices &amp; Specs</h2>
+                        <div className="stock">
+                            <span>Quantity</span>
+                            {productData.quantity} in stock.
+                        </div>
+                        <div className="price">
+                            <span>Price</span>
+                            ${productData.price}
+                        </div>
                     </div>
                     <div className="description">
-                        <h4>Price</h4>
+                        <h2>Description</h2>
                         <p>{productData.description}</p>
                     </div>
             </div>

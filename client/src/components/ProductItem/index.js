@@ -30,7 +30,7 @@ function ProductItem(item) {
         <h4>{data.products[0].name}</h4>
       </Link>
       <div className="info">
-        <span className="stock">{data.products[0].quantity} in stock.</span>
+        <span className="stock"><span>Quantity:</span> {data.products[0].quantity} in stock.</span>
         <span className="price">${data.products[0].price}</span>
       </div>
       <button>Add to cart!</button>
