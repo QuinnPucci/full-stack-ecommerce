@@ -10,11 +10,29 @@ export const CATEGORIES = gql`
     }
 `;
 
-// Can query products by its ID, name or category ID
+// Query a product by its ID
+export const PRODUCT = gql`
+query Product($id: ID) {
+  product(_id: $id) {
+    _id
+    name
+    description
+    image
+    price
+    quantity
+    category {
+      _id
+      name
+    }
+  }
+}
+`;
+
+// Can query products by its name or category ID
 // Entering no parameters can fetch all products
 export const PRODUCTS = gql`
-query Products($id: ID, $name: String, $category: ID ) {
-  products(_id: $id, name: $name, category: $category,) {
+query Products($name: String, $category: ID ) {
+  products(name: $name, category: $category,) {
     _id
     name
     description
