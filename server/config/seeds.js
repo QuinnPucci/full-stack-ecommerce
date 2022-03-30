@@ -98,7 +98,7 @@ db.once('open', async () => {
       quantity: 1
     },
     {
-      name: 'Expedition Yacht 2',
+      name: 'Expedition Yacht 3',
       category: categories[3]._id,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
       image: 'https://i.pinimg.com/originals/23/ee/52/23ee5292de1623f653fd8b5e5abd29fc.jpg',
