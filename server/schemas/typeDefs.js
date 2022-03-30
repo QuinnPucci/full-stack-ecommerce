@@ -56,7 +56,7 @@ const typeDefs = gql`
         findUser(_id: ID!): User
         categories: [Category]
         products(_id: ID, category: ID, name: String): [Product]
-        product(_id: ID!, name: String!): Product
+        product(_id: ID, name: String): Product
         findOrder(_id: ID!): Order
         order(_id: ID!): Order
         orders: [Order]

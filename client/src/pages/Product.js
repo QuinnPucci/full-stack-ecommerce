@@ -11,36 +11,38 @@ import { PRODUCTS } from '../utils/queries';
 
 const ProductPage = () => {
     const { id: productParam } = useParams();
+    console.log("Product ID:", productParam);
 
     // Run a query for the product card
-    const { loading, data } = useQuery(PRODUCTS, {
+    const { loading, productData } = useQuery(PRODUCTS, {
         variables: { id: productParam }
     });
+    console.log("Product info:", productData);
 
     // Keep this so the app wont crash if data hasnt been received yet
-    if(!data) {
-    return (
-        <div>Loading...</div>
-    );
+    if(!productData) {
+        return (
+            <div>Loading...</div>
+        );
     }
 
     return (
         <>
-        <h1>{data.products[0].name}</h1>
+        <h1>{productData.products[0].name}</h1>
         <div className="">
-            <img alt={data.products[0].name} src={`${data.products[0].image}`} />
+            <img alt={productData.products[0].name} src={`${productData.products[0].image}`} />
                 <div className="info">
                     <div className="stock">
                         <h4>Quantity</h4>
-                        <span>{data.products[0].quantity} in stock.</span>
+                        <span>{productData.products[0].quantity} in stock.</span>
                     </div>
                     <div className="price">
                         <h4>Price</h4>
-                        <span className="price">${data.products[0].price}</span>
+                        <span className="price">${productData.products[0].price}</span>
                     </div>
                     <div className="description">
                         <h4>Price</h4>
-                        <p>{data.products[0].description}</p>
+                        <p>{productData.products[0].description}</p>
                     </div>
             </div>
             <button>Add to cart!</button>

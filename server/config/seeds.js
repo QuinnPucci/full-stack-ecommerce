@@ -2,7 +2,9 @@ const db = require('./connection');
 const { Product, Category } = require('../models');
 
 // Drop the 'products' collection
-db.dropCollection('products', function(err, result) {});
+db.dropCollection('products', function(err, result) {
+  console.log("Dropcollection error: ", err);
+});
 
 db.once('open', async () => {
 

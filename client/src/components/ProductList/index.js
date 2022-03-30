@@ -18,6 +18,7 @@ function ProductList({ currentCategory }) {
     return products.filter(
       (product) => product.category._id === currentCategory
     );
+    
   }
 
   return (
