@@ -123,3 +123,20 @@ query findUser ($_id: ID!) {
   }
 }
 `;
+
+// "ME" query
+export const QUERY_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      billingFirstName
+      billingLastName
+      shippingAddress
+      shippingCity
+      shippingProvince
+      shippingPostalCode
+    }
+  }
+`;

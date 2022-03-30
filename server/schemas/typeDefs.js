@@ -52,6 +52,7 @@ const typeDefs = gql`
         name: String
     }
     type Query {
+        me: User
         findUsers: [User]
         findUser(_id: ID!): User
         categories: [Category]
