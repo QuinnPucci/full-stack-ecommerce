@@ -28,6 +28,16 @@ h6 {
   line-height: 1.25;
 }
 
+header {
+  background: #b9cff8;
+  margin-top: 0px;
+  padding-top: 60px;
+}
+
+ul {
+  text-decoration: none;
+}
+
 .footer {
   width: 100%;
   bottom: 0;
@@ -119,4 +129,13 @@ input:focus {
 
 .error-text {
   color: #890f0d;
+}
+
+.mx-1 {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+ul {
+  list-style: none;
 }
