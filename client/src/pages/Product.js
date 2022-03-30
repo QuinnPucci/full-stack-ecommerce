@@ -49,7 +49,7 @@ const ProductPage = () => {
                         <p>{productData.description}</p>
                     </div>
             </div>
-            <button>Add to cart!</button>
+            <button class="add-to-cart-btn">Add to cart!</button>
         </div>
         </>
     );
