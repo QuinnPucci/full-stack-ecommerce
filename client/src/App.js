@@ -69,35 +69,5 @@ function App() {
   );
 }
 
-export default App() {
-  const [count, setCount] = React.useState(1);
-  
-  return (
-    <div style={{ display: "block", padding: 30 }}>
-      <div>
-        <Badge color="secondary" badgeContent={count}>
-          <ShoppingCartIcon />{" "}
-        </Badge>
-        <ButtonGroup>
-          <Button class='add-to-cart-btn'
-            onClick={() => {
-              setCount(Math.max(count - 1, 0));
-            }}
-          >
-            {" "}
-            <RemoveIcon fontSize="medium" />
-          </Button>
-          <Button
-            onClick={() => {
-              setount(count + 1);
-            }}
-          >
-            {" "}
-            <AddIcon fontSize="medium" />
-          </Button>
-        </ButtonGroup>
-      </div>
-    </div>
-  );
-}
-}
+export default App;
+
